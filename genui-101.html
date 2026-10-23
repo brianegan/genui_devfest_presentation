@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GenUI 101</title>
+  <title>GenUI, LLMs driving the user experience, what could go wrong</title>
   <!-- VGV favicon (verygood.ventures), embedded so the deck stays self-contained -->
   <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAATeSURBVHgBvVdLTFxlFD73dt4D01HKNG1pZCDiaFtCE2mlicmU2spCI8SlaLvT1IVNdNHE+NjYqImJbSJxSZUu3Fi60GBJBKOmBYxMsQVEhWkoihDaKcx7hrn9vzO9cO+8p6R8ycDcf+7/n++c851z7pXoPmq9o06LxfGWRJJXIvLSw4BCvpQkfT7Z5z6vLkn442mbqJXIPCAuamkToBD5SSbvxPd1N5nAk23TMxsxXmmXaSWUKmsPSESid/fLnraZ4xv1vP1oBZUL2ETKZVlSTtEG0dpi4yiUT0LyGkQsmsrZZDRItGu7gVzbZLJbZRq9EaOVoMJr0ZhCC7eTFI4oJZ0FsRuoRMBwg9tIT7hNZDRKml9i1HXhDs39n6Sn95npYJOFFpaSNHQtWhKRkuLmdMj0/LM22ttgzjBOFFhJUfenO6j9uQomAbiqDPRiawXtedxU9OyiBGC89Rkb2W3pWwPLKf4A8UTaw68u3qVXO7bS3Pyqbi8IH2g0Fzy/aAqQ53hSYc+vT8Xoxl9xXndVbaHaGgM177Pw9ctvzlEokqJQWJCSFPrltwi5a4wibSaxrqzty0TeCHjqTHTuPZfIq4UGrkREeBN8yOXu3eJTQy37rTR8LUZzC0lRhpXUf343vcRpSNCf03GOEgipkah+dAuVFIGTrzjZuKfezMo+cshODvsSfX1pmXaK697+FW46kpCCmvdjJ2Z534FGC/00HGbjIPP3zXWv9zaYaOBqpDCBnfcNgoCOVOcjVFmRDhbqHff19C5TZ7uDPhLeXxSkunoC/LtqHOS1BCBMRGHxtl4n0lNt07paURuKp97E+UUkHGKtudGi23j0+CyHXcVyMMWRANHuT3bQFz136L/FJOtABVLjm4jljwCAtnr69SoaHovQ5D9xGhH/5+aTfCDKTQU8nBQHIiVo7NACSKveB3PMhu3bsnWQJcKRsSiXlWiT1HGsksmceaeajWnReshG7362mI6Y0AMiBD10iJRwRAQBu1XfM2zWbM0btB6dFaoHAXx+vBJmoxAcjJzsdOo2vta+ldc598LOLpeBQ69FPKE3ZspoYoBOA/ACAmxutDKhTDHmAzzH/Vp8/OUS/T4e5RLU4pvvVihnBADV+29/CIpwSazo+seM5BHNBJWQaURFrnU40/dzSLcWWF7Nui9vJ8SIBTBYfBNRVjjq/vQbVSWNXkQRJZdAFzWkQx8MZw+nnCehg6lsUb8Hm6z0wmE7Xf41xC1XHTqF4BDliDK+Nb9+L7pkJvJGABudjvWywTDChMM8QDQQYgwpFqkwBlFmAhoaGkP3M7JT/lvZxPPGcsqfWOvlWkBUiIZvPEYjf0SZwJEWe84zUKrqhJyZTeS8J28EEmLUDvmia1rQAk891WIannm7uqAePHVmkuW0jsqehgBEhJDriAlRXZ+K8/ApJkboAGnINYRKIgCAuZYE+jm0oXa8QoDo/i0i2JKeCUFiYWmV84/v5953Fd2Ddt51IVD0fUFUqDSokOKlIkA6Bq6GeRQ77LkfLuAtRvOl/iAPp6IQr2qiFc98IL59SA8AkEEXhJeYmOW+HQnnT0hN7TPOeFQZpU16L9TAP95X55Z9ve6AeMA6jAXaPPgV2eLFF9183CPeE8XKKUVRynpbKhVpvdFgOEpn/YNufoa7B8j1D9SE6OA/AAAAAElFTkSuQmCC" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -367,17 +367,6 @@
 
     .counter {
       font-variant-numeric: tabular-nums;
-    }
-
-    .hint {
-      position: fixed;
-      top: 1.6rem;
-      right: clamp(3rem, 8vw, 9rem);
-      font-size: .72rem;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, .35);
-      z-index: 10;
     }
 
     .mock-brand {
@@ -1047,8 +1036,6 @@
 
 <body>
 
-  <div class="hint">← / → to navigate</div>
-
   <div class="deck" id="deck">
 
     <!-- ===================================================================
@@ -1057,8 +1044,8 @@
 
     <!-- 1. TITLE -->
     <section class="slide active">
-      <div class="reveal label">GenUI 101 · An intro for developers</div>
-      <h1 class="reveal">From walls of text to <span class="grad-text">working interfaces</span>.</h1>
+      <div class="reveal label">From walls of text to working interfaces</div>
+      <h1 class="reveal">GenUI, LLMs driving the user experience, <span class="grad-text">what could go wrong</span></h1>
       <p class="reveal lead">What generative UI is, what you can build with it, and how it actually works.</p>
       <div class="reveal team">
         <div class="person"><span>◆</span>Brian Egan</div>
@@ -1114,7 +1101,7 @@
       <div class="reveal label">The solution · GenUI</div>
       <h2 class="reveal" style="max-width: 22ch;">The model decides <span class="accent">what</span> to show. Your app
         decides <span class="accent">how</span> it looks.</h2>
-      <p class="reveal lead">Generative UI: an LLM puts together an interface at runtime, for this user, from components
+      <p class="reveal lead">Generative UI: an LLM puts together an interface at runtime, for this user, for this context, from components
         you built and own.</p>
     </section>
 
@@ -1294,7 +1281,7 @@
         <div class="node strong">
           <div class="k">Your app</div>
           <div class="part">Renderer</div>
-          <div class="part">Catalog</div>
+          <div class="part">Components</div>
         </div>
         <div class="link">
           <div class="arrow">actions</div>
@@ -1304,6 +1291,7 @@
           <div class="k">Your server</div>
           <div class="part">LLM</div>
           <div class="part">System prompt</div>
+          <div class="part">Catalog</div>
           <div class="part">Tools</div>
         </div>
       </div>
@@ -1339,7 +1327,7 @@
           <h2 class="reveal">It's just JSON.</h2>
           <p class="reveal lead">A flat list of components. Each one has an id, a type, and props.</p>
           <ol class="reveal seq" style="margin-top: 2rem;">
-            <li><span><b><code>id</code></b> so it can be updated later</span></li>
+            <li><span><b><code>id</code></b> so it can be referenced later</span></li>
             <li><span><b><code>component</code></b> is a name from your catalog</span></li>
             <li><span><b><code>children</code></b> point at ids, not nested objects</span></li>
           </ol>
@@ -1373,7 +1361,7 @@
       <div class="reveal bar"></div>
       <div class="reveal label">Rendering</div>
       <h2 class="reveal">JSON in, widgets out.</h2>
-      <p class="reveal lead">The renderer looks up each component type in your catalog and calls its builder.</p>
+      <p class="reveal lead">The renderer looks up each component name in your catalog and calls its builder.</p>
       <div class="reveal flow" style="align-items:center;">
         <div class="code-wrap" style="flex: 1 1 300px;">
           <pre class="code" data-lang="json" data-hl="2" style="font-size: clamp(.8rem, 1.2vw, 1.1rem);">{ "id": "alaska",
@@ -1449,9 +1437,7 @@
           <div class="reveal bar"></div>
           <div class="reveal label">Component builders</div>
           <h2 class="reveal">A schema plus a builder.</h2>
-          <p class="reveal lead">The schema tells the model what to send. The builder turns it into your widget.</p>
-          <p class="reveal note">Flutter's <code>genui</code> package shown, simplified. Every renderer has the same
-            two parts.</p>
+          <p class="reveal lead">The schema tells the model what to send. The builder turns it into your component.</p>
         </div>
         <div class="col wide code-wrap">
           <div class="reveal code-tag">Your app</div>
@@ -1486,10 +1472,10 @@
         <div class="col">
           <div class="reveal bar"></div>
           <div class="reveal label">A better schema</div>
-          <h2 class="reveal">Send an ID, not the data.</h2>
+          <h2 class="reveal">Send IDs, not data.</h2>
           <p class="reveal lead">The model picks the cruise. Your app loads the facts.</p>
           <ol class="reveal seq" style="margin-top: 1.8rem;">
-            <li><span><b>Accurate.</b> Prices come from your API, not the model.</span></li>
+            <li><span><b>Accurate.</b> Prices come directly from your API, not through the model.</span></li>
             <li><span><b>Fresh.</b> A price change shows up without asking the model again.</span></li>
             <li><span><b>Checkable.</b> A bad ID fails loudly. A wrong price doesn't.</span></li>
             <li><span><b>Cheaper.</b> One short ID instead of every field.</span></li>
@@ -1534,7 +1520,7 @@ Reply with A2UI messages.
 - Only use cruiseIds returned by searchCruises.
 - Show at most 3 options.
 
-<span class="h">## Components</span>  <span class="com">← generated from the catalog</span>
+<span class="h">## Components</span>  <span class="com">← dynamic, from the catalog</span>
 - CruiseCard    cruiseId
 - GuestCounter  value
 - Button        child, action</pre>
