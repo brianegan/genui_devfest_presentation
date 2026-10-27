@@ -1031,6 +1031,53 @@
       display: inline-block;
       margin-top: .7rem;
     }
+
+    /* ----- Closing slide: headings share the top row; links on the left, QR code centered in the right half ----- */
+    .slide.qr-split {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-rows: auto minmax(0, 1fr);
+      gap: 1.6rem clamp(2rem, 5vw, 4rem);
+    }
+
+    .qr-split-body {
+      grid-row: 2;
+    }
+
+    .qr-split .links {
+      grid-template-columns: 1fr;
+      gap: .8rem;
+      margin-top: 0;
+    }
+
+    .qr-split .links .card {
+      padding: 1rem 1.4rem;
+    }
+
+    .qr-col {
+      grid-area: 2 / 2;
+      container-type: size;
+    }
+
+    /* Largest square that fits the cell. Its title hangs above it in the heading row, level with the left heading. */
+    .qr-group {
+      position: relative;
+      width: min(100cqw, 100cqh);
+      margin: 0 auto;
+    }
+
+    .qr-group h2 {
+      position: absolute;
+      left: 0;
+      bottom: calc(100% + 1.6rem);
+    }
+
+    .qr {
+      display: block;
+      width: 100%;
+      border-radius: 1.2rem;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, .45);
+    }
   </style>
 </head>
 
@@ -1780,28 +1827,38 @@ Reply with A2UI messages.
     </section>
 
     <!-- 25. GET STARTED + Q&A -->
-    <section class="slide">
-      <div class="reveal bar"></div>
-      <div class="reveal label">Get started</div>
-      <h2 class="reveal">Go build one.</h2>
-      <div class="links">
-        <div class="reveal card">
-          <div class="num">PROTOCOL</div>
-          <h3>A2UI spec</h3>
-          <a href="https://a2ui.org" target="_blank" rel="noopener">a2ui.org</a>
+    <section class="slide qr-split">
+      <div>
+        <div class="reveal bar"></div>
+        <div class="reveal label">Get started</div>
+        <h2 class="reveal">Go build one</h2>
+      </div>
+      <div class="qr-split-body">
+        <div class="links">
+          <div class="reveal card">
+            <div class="num">PROTOCOL</div>
+            <h3>A2UI spec</h3>
+            <a href="https://a2ui.org" target="_blank" rel="noopener">a2ui.org</a>
+          </div>
+          <div class="reveal card">
+            <div class="num">FLUTTER</div>
+            <h3>genui package</h3>
+            <a href="https://pub.dev/packages/genui" target="_blank" rel="noopener">pub.dev/packages/genui</a>
+          </div>
+          <div class="reveal card">
+            <div class="num">ALTERNATIVE</div>
+            <h3>OpenUI Lang</h3>
+            <a href="https://github.com/thesysdev/openui" target="_blank" rel="noopener">github.com/thesysdev/openui</a>
+          </div>
         </div>
-        <div class="reveal card">
-          <div class="num">FLUTTER</div>
-          <h3>genui package</h3>
-          <a href="https://pub.dev/packages/genui" target="_blank" rel="noopener">pub.dev/packages/genui</a>
-        </div>
-        <div class="reveal card">
-          <div class="num">ALTERNATIVE</div>
-          <h3>OpenUI Lang</h3>
-          <a href="https://github.com/thesysdev/openui" target="_blank" rel="noopener">github.com/thesysdev/openui</a>
+        <p class="reveal lead">Questions?</p>
+      </div>
+      <div class="qr-col">
+        <div class="qr-group">
+          <h2 class="reveal">Feedback</h2>
+          <img class="reveal qr" src="feedback-qr.png" alt="QR code for session feedback" />
         </div>
       </div>
-      <p class="reveal lead">Questions?</p>
     </section>
 
   </div>
