@@ -1407,7 +1407,7 @@
     <section class="slide">
       <div class="reveal bar"></div>
       <div class="reveal label">Rendering</div>
-      <h2 class="reveal">JSON in, widgets out.</h2>
+      <h2 class="reveal">JSON in, components out.</h2>
       <p class="reveal lead">The renderer looks up each component name in your catalog and calls its builder.</p>
       <div class="reveal flow" style="align-items:center;">
         <div class="code-wrap" style="flex: 1 1 300px;">
@@ -1436,24 +1436,12 @@
       </div>
     </section>
 
-    <!-- 13. LIVE DEMO — Juan drives. If it breaks, debug it out loud. -->
-    <section class="slide">
-      <div class="reveal bar"></div>
-      <div class="reveal label">Live demo</div>
-      <h2 class="reveal">Let's build it live.</h2>
-      <p class="reveal lead">Real model, real JSON, real widgets. If it breaks, that's a lesson too.</p>
-      <div class="reveal prompt-bar">
-        <span>Find me a summer cruise under $2,000.</span>
-        <div class="send">↑</div>
-      </div>
-    </section>
-
-    <!-- 14. THE CATALOG -->
+    <!-- 13. THE CATALOG -->
     <section class="slide">
       <div class="reveal bar"></div>
       <div class="reveal label">The catalog</div>
-      <h2 class="reveal" style="max-width: 24ch;">The catalog is the menu.</h2>
-      <p class="reveal lead">The model can only order what's on it. That's your design system and your guardrail.</p>
+      <h2 class="reveal" style="max-width: 24ch;">The catalog is the allowlist for the LLM.</h2>
+      <p class="reveal lead">The model can only choose what's on it.</p>
       <div class="cards">
         <div class="reveal card">
           <div class="num">NAME</div>
@@ -1467,7 +1455,7 @@
         </div>
         <div class="reveal card">
           <div class="num">BUILDER</div>
-          <h3>Your widget</h3>
+          <h3>Your component</h3>
           <p>What the user actually sees.</p>
         </div>
       </div>
@@ -1477,7 +1465,7 @@
       </div>
     </section>
 
-    <!-- 15. COMPONENT BUILDERS — the "everything in the schema" version -->
+    <!-- 14. COMPONENT BUILDERS — the "everything in the schema" version -->
     <section class="slide">
       <div class="split top tight">
         <div class="col">
@@ -1513,7 +1501,7 @@
       </div>
     </section>
 
-    <!-- 16. SEND AN ID, NOT THE DATA — same component, safer schema -->
+    <!-- 15. SEND AN ID, NOT THE DATA — same component, safer schema -->
     <section class="slide">
       <div class="split top tight">
         <div class="col">
@@ -1548,7 +1536,7 @@ widgetBuilder: (ctx) {
       </div>
     </section>
 
-    <!-- 17. THE SYSTEM PROMPT -->
+    <!-- 16. THE SYSTEM PROMPT -->
     <section class="slide">
       <div class="split top tight">
         <div class="col">
@@ -1575,7 +1563,7 @@ Reply with A2UI messages.
       </div>
     </section>
 
-    <!-- 18. DATA BINDING -->
+    <!-- 17. DATA BINDING -->
     <section class="slide">
       <div class="reveal bar"></div>
       <div class="reveal label">Data binding</div>
@@ -1615,7 +1603,7 @@ Reply with A2UI messages.
         that path updates.</p>
     </section>
 
-    <!-- 19. ACTIONS -->
+    <!-- 18. ACTIONS -->
     <section class="slide">
       <div class="reveal bar"></div>
       <div class="reveal label">Actions</div>
@@ -1655,7 +1643,7 @@ Reply with A2UI messages.
       </div>
     </section>
 
-    <!-- 20. TOOL CALLING. Handoff back to Brian at the end. -->
+    <!-- 19. TOOL CALLING. Handoff back to Brian at the end. -->
     <section class="slide">
       <div class="split top tight">
         <div class="col">
@@ -1693,7 +1681,7 @@ Reply with A2UI messages.
          PART 3 — WRAP (Brian, ~7 min + ~5 min Q&A)
          =================================================================== -->
 
-    <!-- 21. THE FULL ROUND TRIP -->
+    <!-- 20. THE FULL ROUND TRIP -->
     <section class="slide">
       <div class="reveal bar"></div>
       <div class="reveal label">Putting it together <span class="speaker">BRIAN</span></div>
@@ -1737,7 +1725,7 @@ Reply with A2UI messages.
       </div>
     </section>
 
-    <!-- 22. WHAT'S STILL HARD — from our GenUI in Production gap analysis -->
+    <!-- 21. WHAT'S STILL HARD — from our GenUI in Production gap analysis -->
     <section class="slide">
       <div class="reveal bar"></div>
       <div class="reveal label">What's still hard</div>
@@ -1771,7 +1759,7 @@ Reply with A2UI messages.
       </div>
     </section>
 
-    <!-- 23. TEACHING YOUR TEAM -->
+    <!-- 22. TEACHING YOUR TEAM -->
     <section class="slide">
       <div class="reveal bar"></div>
       <div class="reveal label">Bringing your team along</div>
@@ -1802,7 +1790,7 @@ Reply with A2UI messages.
       </div>
     </section>
 
-    <!-- 24. TAKEAWAYS -->
+    <!-- 23. TAKEAWAYS -->
     <section class="slide">
       <div class="reveal bar"></div>
       <div class="reveal label">Takeaways</div>
@@ -1826,7 +1814,7 @@ Reply with A2UI messages.
       </div>
     </section>
 
-    <!-- 25. GET STARTED + Q&A -->
+    <!-- 24. GET STARTED + Q&A -->
     <section class="slide qr-split">
       <div>
         <div class="reveal bar"></div>
