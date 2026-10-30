@@ -826,6 +826,23 @@
       border-bottom-left-radius: .25em;
     }
 
+    /* Plain-text chatbot reply with inline links (cruise, text-only version) */
+    .msg.wall {
+      max-width: 100%;
+      line-height: 1.55;
+    }
+
+    .msg.wall p+p {
+      margin-top: .6em;
+    }
+
+    .lnk {
+      color: var(--blue-light);
+      text-decoration: underline;
+      text-underline-offset: .15em;
+      white-space: nowrap;
+    }
+
     .chat-input {
       margin-top: auto;
       display: flex;
@@ -1626,7 +1643,7 @@
     <!-- 1. TITLE -->
     <section class="slide active">
       <div class="reveal label">From walls of text to working interfaces</div>
-      <h1 class="reveal">GenUI, LLMs driving the user experience, <span class="grad-text">what could go wrong</span>
+      <h1 class="reveal">GenUI: <span class="grad-text">What can go wrong?</span>
       </h1>
       <p class="reveal lead">What generative UI is, what you can build with it, and how it actually works.</p>
       <div class="reveal team">
@@ -1700,7 +1717,46 @@
       </div>
     </section>
 
-    <!-- 6. CRUISE — two very different answers -->
+    <!-- 6. CRUISE — the text-only version: personal answers, same wall of text -->
+    <section class="slide">
+      <div class="reveal bar"></div>
+      <div class="reveal label">Personalization · VGV Cruise Lines</div>
+      <h2 class="reveal" style="max-width: none;">Today: two personal walls of text.</h2>
+      <div class="duo">
+        <div class="reveal mock">
+          <div class="mock-brand">The Garcias · Family of four</div>
+          <div class="chat" style="background: none; border: none; padding: 0; margin-top: .6em;">
+            <div class="msg user">Help me plan our day in Juneau.</div>
+            <div class="msg ai wall">
+              <p>Here's a family-friendly day for the four of you! Start at 8:30 AM with whale watching on our family
+                boat (ages 4+, $356 for 4). <span class="lnk">Book whale watching</span></p>
+              <p>Lunch is back on board at 12:00 PM, and the kids' menu is available. At 1:30 PM, the free Glacier
+                Junior Ranger walk is a great fit for ages 6 and 9. <span class="lnk">Reserve the ranger walk</span></p>
+              <p>From 4:00 PM, Kids' Club is open for ages 6–12 until 6 PM. <span class="lnk">Sign up for Kids'
+                  Club</span></p>
+            </div>
+          </div>
+        </div>
+        <div class="reveal mock">
+          <div class="mock-brand">Sam &amp; Alex · Honeymoon</div>
+          <div class="chat" style="background: none; border: none; padding: 0; margin-top: .6em;">
+            <div class="msg user">Help me plan our day in Juneau.</div>
+            <div class="msg ai wall">
+              <p>Congratulations to you both! For a relaxing day, I'd suggest our Spa + Dine for Two package, $640 for
+                two.</p>
+              <p>It starts with a 90-minute couples massage on the spa deck, available at 3:00, 4:00, or 5:00 PM.
+                Then the adults-only Chef's Table sunset dinner at 7:30 PM, with champagne on arrival.
+                <span class="lnk">Book the Spa + Dine package</span>
+              </p>
+              <p>Let me know which massage time works best!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="reveal note">The answer fits each traveler. <b>The experience doesn't.</b></p>
+    </section>
+
+    <!-- 7. CRUISE — two very different answers -->
     <section class="slide">
       <div class="reveal bar"></div>
       <div class="reveal label">Personalization · VGV Cruise Lines</div>
@@ -1753,7 +1809,7 @@
       <p class="reveal note">Same chat. Same catalog. <b>Different content, different layout.</b></p>
     </section>
 
-    <!-- 7. BANKING — generated homepage per customer -->
+    <!-- 8. BANKING — generated homepage per customer -->
     <section class="slide">
       <div class="reveal bar"></div>
       <div class="reveal label">Personalization · Banking</div>
@@ -1828,7 +1884,7 @@
       </div>
     </section>
 
-    <!-- 8. CANVAS — chat on the right builds an analytics dashboard on the left -->
+    <!-- 9. CANVAS — chat on the right builds an analytics dashboard on the left -->
     <section class="slide">
       <div class="reveal bar"></div>
       <div class="reveal label">Canvas · Analytics</div>
@@ -1885,7 +1941,7 @@
           text.</b></p>
     </section>
 
-    <!-- 9. WHAT IT ISN'T — Handoff to Juan at the end. -->
+    <!-- 10. WHAT IT ISN'T — Handoff to Juan at the end. -->
     <section class="slide">
       <div class="reveal bar"></div>
       <div class="reveal label">What it isn't</div>
@@ -1918,7 +1974,7 @@
          PART 2 — HOW IT WORKS (Juan, ~18 min including a ~6 min live demo)
          =================================================================== -->
 
-    <!-- 10. THE BIG PICTURE -->
+    <!-- 11. THE BIG PICTURE -->
     <section class="slide">
       <div class="reveal bar"></div>
       <div class="reveal label">How it works <span class="speaker">JUAN</span></div>
@@ -1951,7 +2007,7 @@
       </div>
     </section>
 
-    <!-- 11. PROTOCOLS -->
+    <!-- 12. PROTOCOLS -->
     <section class="slide">
       <div class="reveal bar"></div>
       <div class="reveal label">Protocols</div>
@@ -1972,7 +2028,7 @@
         own components.</p>
     </section>
 
-    <!-- 12. A2UI IS JUST JSON -->
+    <!-- 13. A2UI IS JUST JSON -->
     <section class="slide">
       <div class="split top tight">
         <div class="col">
@@ -2010,7 +2066,7 @@
       </div>
     </section>
 
-    <!-- 13. JSON → WIDGETS -->
+    <!-- 14. JSON → WIDGETS -->
     <section class="slide">
       <div class="reveal bar"></div>
       <div class="reveal label">Rendering</div>
@@ -2043,7 +2099,7 @@
       </div>
     </section>
 
-    <!-- 14. THE CATALOG -->
+    <!-- 15. THE CATALOG -->
     <section class="slide">
       <div class="reveal bar"></div>
       <div class="reveal label">The catalog</div>
@@ -2073,7 +2129,7 @@
       </div>
     </section>
 
-    <!-- 15. COMPONENT BUILDERS — the "everything in the schema" version -->
+    <!-- 16. COMPONENT BUILDERS — the "everything in the schema" version -->
     <section class="slide">
       <div class="split top tight">
         <div class="col">
@@ -2109,7 +2165,7 @@
       </div>
     </section>
 
-    <!-- 16. SEND AN ID, NOT THE DATA — same component, safer schema -->
+    <!-- 17. SEND AN ID, NOT THE DATA — same component, safer schema -->
     <section class="slide">
       <div class="split top tight">
         <div class="col">
@@ -2145,7 +2201,7 @@ widgetBuilder: (ctx) {
       </div>
     </section>
 
-    <!-- 17. THE SYSTEM PROMPT -->
+    <!-- 18. THE SYSTEM PROMPT -->
     <section class="slide">
       <div class="split top tight">
         <div class="col">
@@ -2171,7 +2227,7 @@ Reply with A2UI messages.
       </div>
     </section>
 
-    <!-- 18. DATA BINDING -->
+    <!-- 19. DATA BINDING -->
     <section class="slide">
       <div class="reveal bar"></div>
       <div class="reveal label">Data binding</div>
@@ -2211,7 +2267,7 @@ Reply with A2UI messages.
         that path updates.</p>
     </section>
 
-    <!-- 19. ACTIONS -->
+    <!-- 20. ACTIONS -->
     <section class="slide">
       <div class="reveal bar"></div>
       <div class="reveal label">Actions</div>
@@ -2252,7 +2308,7 @@ Reply with A2UI messages.
       </div>
     </section>
 
-    <!-- 20. TOOL CALLING. Handoff back to Brian at the end. -->
+    <!-- 21. TOOL CALLING. Handoff back to Brian at the end. -->
     <section class="slide">
       <div class="split top tight">
         <div class="col">
@@ -2291,7 +2347,7 @@ Reply with A2UI messages.
          PART 3 — WRAP (Brian, ~7 min + ~5 min Q&A)
          =================================================================== -->
 
-    <!-- 21. THE FULL ROUND TRIP -->
+    <!-- 22. THE FULL ROUND TRIP -->
     <section class="slide">
       <div class="reveal bar"></div>
       <h2 class="reveal">The whole loop.</h2>
@@ -2334,7 +2390,7 @@ Reply with A2UI messages.
       </div>
     </section>
 
-    <!-- 22. WHAT COULD GO WRONG — intro. From our GenUI in Production gap analysis. -->
+    <!-- 23. WHAT COULD GO WRONG — intro. From our GenUI in Production gap analysis. -->
     <section class="slide">
       <div class="reveal bar"></div>
       <div class="reveal label">What could go wrong <span class="speaker">BRIAN</span></div>
@@ -2349,7 +2405,7 @@ Reply with A2UI messages.
       </div>
     </section>
 
-    <!-- 23. WHAT COULD GO WRONG — hallucinations -->
+    <!-- 24. WHAT COULD GO WRONG — hallucinations -->
     <section class="slide">
       <div class="reveal bar"></div>
       <div class="reveal label">What could go wrong · 01 Hallucinations</div>
@@ -2383,11 +2439,11 @@ Reply with A2UI messages.
       </div>
     </section>
 
-    <!-- 24. WHAT COULD GO WRONG — safety -->
+    <!-- 25. WHAT COULD GO WRONG — safety -->
     <section class="slide">
       <div class="reveal bar"></div>
       <div class="reveal label">What could go wrong · 02 Safety</div>
-      <h2 class="reveal" style="max-width: 24ch;">Bad asks in. Bad offers out.</h2>
+      <h2 class="reveal" style="max-width: 24ch;">Assume the best. Prepare for the worst.</h2>
       <div class="split top tight">
         <div class="reveal col wide">
           <div class="mock" style="max-width: none;">
@@ -2413,7 +2469,7 @@ Reply with A2UI messages.
       </div>
     </section>
 
-    <!-- 25. WHAT COULD GO WRONG — cost -->
+    <!-- 26. WHAT COULD GO WRONG — cost -->
     <section class="slide">
       <div class="reveal bar"></div>
       <div class="reveal label">What could go wrong · 03 Cost</div>
@@ -2440,13 +2496,13 @@ Reply with A2UI messages.
             <li><span><b>A/B test</b> your GenUI experiences.</span></li>
             <li><span><b>Measure</b> tokens on every render.</span></li>
             <li><span><b>Cache</b> screens that don't need to change.</span></li>
-            <li><span><b>Route</b> simple turns to smaller models.</span></li>
+            <li><span><b>Simplify</b> the response format.</span></li>
           </ol>
         </div>
       </div>
     </section>
 
-    <!-- 26. WHAT COULD GO WRONG — latency -->
+    <!-- 27. WHAT COULD GO WRONG — latency -->
     <section class="slide">
       <div class="reveal bar"></div>
       <div class="reveal label">What could go wrong · 04 Latency</div>
@@ -2473,7 +2529,8 @@ Reply with A2UI messages.
         <div class="reveal col fixes">
           <div class="fixes-head">What helps</div>
           <ol class="seq">
-            <li><span><b>Stream</b> components as they arrive.</span></li>
+            <li><span><b>Benchmark</b> your models.</span></li>
+            <li><span><b>Route</b> simple turns to smaller models.</span></li>
             <li><span>Generate <b>small zones,</b> not whole pages.</span></li>
             <li><span>Show <b>hand-built UI</b> while the model works.</span></li>
           </ol>
@@ -2481,7 +2538,7 @@ Reply with A2UI messages.
       </div>
     </section>
 
-    <!-- 27. WHAT COULD GO WRONG — testing -->
+    <!-- 28. WHAT COULD GO WRONG — testing -->
     <section class="slide">
       <div class="reveal bar"></div>
       <div class="reveal label">What could go wrong · 05 Testing</div>
@@ -2515,7 +2572,7 @@ Reply with A2UI messages.
       </div>
     </section>
 
-    <!-- 28. TEACHING YOUR TEAM -->
+    <!-- 29. TEACHING YOUR TEAM -->
     <section class="slide">
       <div class="reveal bar"></div>
       <div class="reveal label">Bringing your team along</div>
@@ -2546,7 +2603,7 @@ Reply with A2UI messages.
       </div>
     </section>
 
-    <!-- 29. THANKS + CONTACT + Q&A -->
+    <!-- 30. THANKS + CONTACT + Q&A -->
     <section class="slide qr-split">
       <div>
         <div class="reveal bar"></div>
