@@ -2229,42 +2229,49 @@ Reply with A2UI messages.
 
     <!-- 19. DATA BINDING -->
     <section class="slide">
-      <div class="reveal bar"></div>
-      <div class="reveal label">Data binding</div>
-      <h2 class="reveal" style="max-width: 24ch;">Bind to data, not values.</h2>
-      <p class="reveal lead">Inputs write to the data model. Actions read from it.</p>
-      <div class="reveal flow" style="align-items:center; margin-top: 2rem;">
-        <div class="code-wrap" style="flex: 1 1 300px;">
-          <div class="code-tag">Component</div>
-          <pre class="code" data-lang="json" data-hl="4">{ "id": "guests",
-  "component": "GuestCounter",
-  "value": {
-    "path": "/booking/guests" } }</pre>
-        </div>
-        <div class="link" style="flex-basis: clamp(4rem, 6vw, 6rem);">
-          <div class="arrow"></div>
-        </div>
-        <div style="flex: 0 1 auto; font-size: clamp(.8rem, 1.2vw, 1.1rem);">
-          <div class="code-tag">The user taps +</div>
-          <div class="fc stepper">
-            <span class="air">Guests</span>
-            <span class="step-btn">−</span>
-            <span class="price">3</span>
-            <span class="step-btn on">+</span>
+      <div class="split" style="margin-top: 0; align-items: stretch;">
+        <div class="col" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div class="reveal bar"></div>
+            <h2 class="reveal" style="max-width: 24ch;">Bind to paths, not values.</h2>
+            <p class="reveal lead">Inputs write to the data model. Actions read from it.</p>
+          </div>
+          <div class="reveal" style="display: flex; align-items: flex-end; margin-top: 2rem;">
+            <div style="font-size: clamp(.8rem, 1.2vw, 1.1rem);">
+              <div class="code-tag">The user taps +</div>
+              <div class="fc stepper">
+                <span class="air">Guests</span>
+                <span class="step-btn">−</span>
+                <span class="price">3</span>
+                <span class="step-btn on">+</span>
+              </div>
+            </div>
+            <div class="link" style="flex: 1 1 auto; align-self: center; margin-top: 1.4rem;">
+              <div class="arrow">writes</div>
+            </div>
           </div>
         </div>
-        <div class="link" style="flex-basis: clamp(4rem, 6vw, 6rem);">
-          <div class="arrow">writes</div>
-        </div>
-        <div class="code-wrap" style="flex: 1 1 260px;">
-          <div class="code-tag">Data model</div>
-          <pre class="code" data-lang="json" data-hl="3">{ "booking": {
-    "cruiseId": "AK-0612",
-    "guests": 3 } }</pre>
+        <div class="col wide code-wrap">
+          <div class="reveal code-tag">Your catalog · GuestCounter</div>
+          <pre class="reveal code" data-lang="dart" data-hl="2">dataSchema: S.object(properties: {
+  'value': A2uiSchemas.numberReference(),
+}),</pre>
+          <div class="reveal code-tag" style="margin-top: 1.2rem;">The LLM sends</div>
+          <pre class="reveal code" data-lang="json" data-hl="5,10">{ "updateComponents": {
+    "surfaceId": "cruises",
+    "components": [{
+      "id": "guests", "component": "GuestCounter",
+      "value": { "path": "/booking/numberOfGuests" } }] } }
+
+{ "updateDataModel": {
+    "surfaceId": "cruises",
+    "path": "/booking",
+    "value": { "numberOfGuests": 2 } } }</pre>
+          <div class="reveal code-tag" style="margin-top: 1.2rem;">Data model</div>
+          <pre class="reveal code" data-lang="json" data-hl="2">{ "booking": {
+    "numberOfGuests": 3 } }</pre>
         </div>
       </div>
-      <p class="reveal note">The server can write here too, with <code>updateDataModel</code>. Every widget bound to
-        that path updates.</p>
     </section>
 
     <!-- 20. ACTIONS -->
@@ -2278,13 +2285,14 @@ Reply with A2UI messages.
       <div class="reveal flow" style="align-items:center; margin-top: 2rem;">
         <div class="code-wrap" style="flex: 1 1 340px;">
           <div class="code-tag">In the UI · server → app</div>
-          <pre class="code" data-lang="json" data-hl="4,7,8">{ "id": "book", "component": "Button",
+          <pre class="code" data-lang="json" data-hl="7-8">{ "id": "book", "component": "Button",
   "child": "book_label",
   "action": { "event": {
     "name": "bookCruise",
     "context": {
-      "cruiseId": { "path": "/booking/cruiseId" },
-      "guests": { "path": "/booking/guests" }
+      "cruiseId": "AK-0612",
+      "numberOfGuests": {
+        "path": "/booking/numberOfGuests" }
     } } } }</pre>
         </div>
         <div class="link">
@@ -2292,7 +2300,7 @@ Reply with A2UI messages.
         </div>
         <div class="code-wrap" style="flex: 1 1 340px;">
           <div class="code-tag">On tap · app → server</div>
-          <pre class="code" data-lang="json" data-hl="4,9,10">{
+          <pre class="code" data-lang="json" data-hl="10">{
   "version": "v0.9",
   "action": {
     "name": "bookCruise",
@@ -2301,7 +2309,7 @@ Reply with A2UI messages.
     "timestamp": "2026-10-20T14:02:11Z",
     "context": {
       "cruiseId": "AK-0612",
-      "guests": 3 }
+      "numberOfGuests": 3 }
   }
 }</pre>
         </div>
