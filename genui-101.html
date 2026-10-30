@@ -902,7 +902,7 @@
       border: 1.5px dashed var(--pink);
     }
 
-    .tile.blocked > :not(.stamp) {
+    .tile.blocked> :not(.stamp) {
       opacity: .6;
     }
 
@@ -1832,7 +1832,7 @@
     <section class="slide">
       <div class="reveal bar"></div>
       <div class="reveal label">Canvas · Analytics</div>
-      <h2 class="reveal" style="max-width: none;">Ask a question. Get a dashboard.</h2>
+      <h2 class="reveal" style="max-width: none;">Ask a question. Get <i>your</i> dashboard.</h2>
       <div class="reveal mock canvas-mock">
         <div class="canvas">
           <div class="zone board">
@@ -1881,7 +1881,8 @@
           </div>
         </div>
       </div>
-      <p class="reveal note">The chat stays on the side. <b>Each answer adds to the dashboard instead of a wall of text.</b></p>
+      <p class="reveal note">The chat stays on the side. <b>Each answer adds to the dashboard instead of a wall of
+          text.</b></p>
     </section>
 
     <!-- 9. WHAT IT ISN'T — Handoff to Juan at the end. -->
@@ -2128,7 +2129,8 @@
           <pre class="reveal code dim" data-lang="json">{ "id": "alaska", "component": "CruiseCard",
   "name": "Alaska", "days": 7, "price": 1249,
   "route": "Seattle → Juneau → Skagway" }</pre>
-          <div class="reveal code-tag" style="margin-top: 1.2rem;">After · the model picks the ID only, the app loads the data</div>
+          <div class="reveal code-tag" style="margin-top: 1.2rem;">After · the model picks the ID only, the app loads
+            the data</div>
           <pre class="reveal code" data-lang="json" data-hl="2">{ "id": "alaska", "component": "CruiseCard",
   "cruiseId": "AK-0612" }</pre>
           <div class="reveal code-tag" style="margin-top: 1.2rem;">Your builder</div>
@@ -2214,7 +2216,8 @@ Reply with A2UI messages.
       <div class="reveal bar"></div>
       <div class="reveal label">Actions</div>
       <h2 class="reveal" style="max-width: 24ch;">Actions send data back.</h2>
-      <p class="reveal lead">Bound paths become real values before they are sent to the server. The agent replies with new UI.
+      <p class="reveal lead">Bound paths become real values before they are sent to the server. The agent replies with
+        new UI.
       </p>
       <div class="reveal flow" style="align-items:center; margin-top: 2rem;">
         <div class="code-wrap" style="flex: 1 1 340px;">
@@ -2291,7 +2294,6 @@ Reply with A2UI messages.
     <!-- 21. THE FULL ROUND TRIP -->
     <section class="slide">
       <div class="reveal bar"></div>
-      <div class="reveal label">Putting it together <span class="speaker">BRIAN</span></div>
       <h2 class="reveal">The whole loop.</h2>
       <p class="reveal lead">One question, two screens, and no app release in between.</p>
       <div class="reveal loop">
@@ -2335,7 +2337,7 @@ Reply with A2UI messages.
     <!-- 22. WHAT COULD GO WRONG — intro. From our GenUI in Production gap analysis. -->
     <section class="slide">
       <div class="reveal bar"></div>
-      <div class="reveal label">What could go wrong</div>
+      <div class="reveal label">What could go wrong <span class="speaker">BRIAN</span></div>
       <h2 class="reveal" style="max-width: 24ch;">A great demo isn't a production app.</h2>
       <p class="reveal lead">Five things that show up once real users do.</p>
       <div class="reveal pill-row">
@@ -2358,8 +2360,10 @@ Reply with A2UI messages.
             <div class="mock-brand">Generated · Juneau excursions</div>
             <div class="tile" style="margin-top: .6em;">
               <div class="t">Top picks for today</div>
-              <div class="row"><span>Whale watching</span><span class="wrong">$89 <i class="flag">Real price: $129</i></span></div>
-              <div class="row"><span class="wrong">Glacier kayaking <i class="flag">We don't offer this</i></span><span>$149</span></div>
+              <div class="row"><span>Whale watching</span><span class="wrong">$89 <i class="flag">Real price:
+                    $129</i></span></div>
+              <div class="row"><span class="wrong">Glacier kayaking <i class="flag">We don't offer
+                    this</i></span><span>$149</span></div>
               <div class="row"><span>Mendenhall Glacier walk</span><span>Free</span></div>
             </div>
             <div class="tile bad-json" style="margin-top: .6em;">
@@ -2453,11 +2457,13 @@ Reply with A2UI messages.
             <div class="mock-brand">What the user sees, over time</div>
             <div class="lane">
               <span>Whole page</span>
-              <div class="track"><i class="wait" style="--s: 0; --e: 84;">Spinner…</i><i style="--s: 85; --e: 100;">Screen</i></div>
+              <div class="track"><i class="wait" style="--s: 0; --e: 84;">Spinner…</i><i
+                  style="--s: 85; --e: 100;">Screen</i></div>
             </div>
             <div class="lane">
               <span>Streamed zones</span>
-              <div class="track"><i style="--s: 0; --e: 14;">Header</i><i style="--s: 16; --e: 40;">Card</i><i style="--s: 42; --e: 66;">Card</i><i style="--s: 68; --e: 84;">Actions</i></div>
+              <div class="track"><i style="--s: 0; --e: 14;">Header</i><i style="--s: 16; --e: 40;">Card</i><i
+                  style="--s: 42; --e: 66;">Card</i><i style="--s: 68; --e: 84;">Actions</i></div>
             </div>
             <div class="lane axis"><span></span>
               <div><span>0s</span><span>up to a minute</span></div>
