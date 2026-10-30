@@ -2279,14 +2279,13 @@ Reply with A2UI messages.
       <div class="reveal bar"></div>
       <div class="reveal label">Actions</div>
       <h2 class="reveal" style="max-width: 24ch;">Actions send data back.</h2>
-      <p class="reveal lead">Bound paths become real values before they are sent to the server. The agent replies with
-        new UI.
+      <p class="reveal lead">Bound paths become real values before they are sent to the server so the agent can reply accordingly.
       </p>
       <div class="reveal flow" style="align-items:center; margin-top: 2rem;">
         <div class="code-wrap" style="flex: 1 1 340px;">
-          <div class="code-tag">In the UI · server → app</div>
-          <pre class="code" data-lang="json" data-hl="7-8">{ "id": "book", "component": "Button",
-  "child": "book_label",
+          <div class="code-tag">The LLM sends · Submit button</div>
+          <pre class="code" data-lang="json" data-hl="7-8">{ "id": "submit", "component": "Button",
+  "child": "submit_label",
   "action": { "event": {
     "name": "bookCruise",
     "context": {
@@ -2296,7 +2295,7 @@ Reply with A2UI messages.
     } } } }</pre>
         </div>
         <div class="link">
-          <div class="arrow hot">user taps Book</div>
+          <div class="arrow hot">user taps Submit</div>
         </div>
         <div class="code-wrap" style="flex: 1 1 340px;">
           <div class="code-tag">On tap · app → server</div>
@@ -2305,7 +2304,7 @@ Reply with A2UI messages.
   "action": {
     "name": "bookCruise",
     "surfaceId": "cruises",
-    "sourceComponentId": "book",
+    "sourceComponentId": "submit",
     "timestamp": "2026-10-20T14:02:11Z",
     "context": {
       "cruiseId": "AK-0612",
