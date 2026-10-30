@@ -1921,7 +1921,7 @@
     <section class="slide">
       <div class="reveal bar"></div>
       <div class="reveal label">How it works <span class="speaker">JUAN</span></div>
-      <h2 class="reveal">Three pieces, one loop.</h2>
+      <h2 class="reveal">Three key pieces.</h2>
       <div class="reveal flow">
         <div class="node">
           <div class="k">User</div>
@@ -1959,7 +1959,7 @@
         <div class="reveal card" style="border-color: rgba(69,156,255,.45);">
           <div class="num">OUR BASELINE</div>
           <h3>A2UI</h3>
-          <p>Google's open protocol. JSON messages with a flat list of components. Built to stream.</p>
+          <p>Google's open protocol. JSON messages with a flat list of components.</p>
         </div>
         <div class="reveal card">
           <div class="num">ALTERNATIVE</div>
@@ -1978,7 +1978,7 @@
           <div class="reveal bar"></div>
           <div class="reveal label">A2UI</div>
           <h2 class="reveal">It's just JSON.</h2>
-          <p class="reveal lead">A flat list of components. Each one has an id, a type, and props.</p>
+          <p class="reveal lead">A flat list of components. Each one has an id, a type, and properties.</p>
           <ol class="reveal seq" style="margin-top: 2rem;">
             <li><span><b><code>id</code></b> so it can be referenced later</span></li>
             <li><span><b><code>component</code></b> is a name from your catalog</span></li>
@@ -2052,12 +2052,12 @@
         <div class="reveal card">
           <div class="num">NAME</div>
           <h3><code>CruiseCard</code></h3>
-          <p>What the model calls it.</p>
+          <p>What the model chooses.</p>
         </div>
         <div class="reveal card">
           <div class="num">SCHEMA</div>
           <h3>name, route, days, price</h3>
-          <p>What the model has to send.</p>
+          <p>What the model has to fill.</p>
         </div>
         <div class="reveal card">
           <div class="num">BUILDER</div>
@@ -2115,20 +2115,20 @@
           <div class="reveal bar"></div>
           <div class="reveal label">A better schema</div>
           <h2 class="reveal">Send IDs, not data.</h2>
-          <p class="reveal lead">The model picks the cruise. Your app loads the facts.</p>
+          <p class="reveal lead">The model picks the cruise. Your app loads the data.</p>
           <ol class="reveal seq" style="margin-top: 1.8rem;">
             <li><span><b>Accurate.</b> Prices come directly from your API, not through the model.</span></li>
             <li><span><b>Fresh.</b> A price change shows up without asking the model again.</span></li>
             <li><span><b>Checkable.</b> A bad ID fails loudly. A wrong price doesn't.</span></li>
-            <li><span><b>Cheaper.</b> One short ID instead of every field.</span></li>
+            <li><span><b>Cheaper and faster.</b> One short ID for the LLM to fill instead of every property.</span></li>
           </ol>
         </div>
         <div class="col wide code-wrap">
-          <div class="reveal code-tag">Before · the model retypes your data</div>
+          <div class="reveal code-tag">Before · the model retypes all your data</div>
           <pre class="reveal code dim" data-lang="json">{ "id": "alaska", "component": "CruiseCard",
   "name": "Alaska", "days": 7, "price": 1249,
   "route": "Seattle → Juneau → Skagway" }</pre>
-          <div class="reveal code-tag" style="margin-top: 1.2rem;">After · the model picks, the app loads</div>
+          <div class="reveal code-tag" style="margin-top: 1.2rem;">After · the model picks the ID only, the app loads the data</div>
           <pre class="reveal code" data-lang="json" data-hl="2">{ "id": "alaska", "component": "CruiseCard",
   "cruiseId": "AK-0612" }</pre>
           <div class="reveal code-tag" style="margin-top: 1.2rem;">Your builder</div>
@@ -2149,11 +2149,10 @@ widgetBuilder: (ctx) {
         <div class="col">
           <div class="reveal bar"></div>
           <div class="reveal label">The system prompt</div>
-          <h2 class="reveal">The prompt teaches the model to design.</h2>
+          <h2 class="reveal">The prompt sets the design guidelines.</h2>
           <p class="reveal lead">Your rules, plus a list of components generated from the catalog.</p>
         </div>
         <div class="col wide code-wrap">
-          <div class="reveal code-tag">Your server</div>
           <pre class="reveal code">You are the VGV Cruise Lines assistant.
 Reply with A2UI messages.
 
@@ -2215,7 +2214,7 @@ Reply with A2UI messages.
       <div class="reveal bar"></div>
       <div class="reveal label">Actions</div>
       <h2 class="reveal" style="max-width: 24ch;">Actions send data back.</h2>
-      <p class="reveal lead">Bound paths become real values before they leave the device. The agent replies with new UI.
+      <p class="reveal lead">Bound paths become real values before they are sent to the server. The agent replies with new UI.
       </p>
       <div class="reveal flow" style="align-items:center; margin-top: 2rem;">
         <div class="code-wrap" style="flex: 1 1 340px;">
